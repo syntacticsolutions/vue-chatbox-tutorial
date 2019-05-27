@@ -68,6 +68,7 @@ export default {
 
 .chat-box-list-container {
   overflow: scroll;
+  margin-bottom: 1px;
 }
 
 .chat-box-list {
