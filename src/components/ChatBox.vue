@@ -34,14 +34,16 @@ export default {
   }),
   methods: {
     sendMessage() {
+      const message = this.message
+
       this.messages.push({
-        text: this.message,
+        text: message,
         author: 'client'
       })
 
       this.message = ''
 
-      this.$axios.get(`https://www.cleverbot.com/getreply?key=CC8uqcCcSO3VsRFvp5-uW5Nxvow&input=${this.message}`)
+      this.$axios.get(`https://www.cleverbot.com/getreply?key=CC8uqcCcSO3VsRFvp5-uW5Nxvow&input=${message}`)
       .then(res => {
         this.messages.push({
           text: res.data.output,
